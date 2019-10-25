@@ -31,7 +31,7 @@ namespace SweetSavory
 
       //new code
       services.AddIdentity<StoreManager, IdentityRole>()
-                .AddEntityFrameworkStores<LibraryContext>()
+                .AddEntityFrameworkStores<SweetSavoryContext>()
                 .AddDefaultTokenProviders();
 
                 services.Configure<IdentityOptions>(options =>
