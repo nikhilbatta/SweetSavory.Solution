@@ -22,8 +22,8 @@ _Specs_
 
 * _Git Clone from https://github.com/nikhilbatta/WordCounter_
 * _Make sure you have .Net installed_
-* _Install MySql Server and MySql WorkBench
-* _Open terminal and start MySql Server
+* _Install MySql Server and MySql WorkBench_
+* _Open terminal and start MySql Server_
 * _Open terminal, go into the main project folder and type in dotnet run_
 * _Open google chrome and enter in the specific localhost page that the terminal will lead you to._
 
