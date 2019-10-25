@@ -20,7 +20,7 @@ _Specs_
 
 ## Setup/Installation Requirements
 
-* _Git Clone from https://github.com/nikhilbatta/WordCounter_
+* _Git Clone project_
 * _Make sure you have .Net installed_
 * _Install MySql Server and MySql WorkBench_
 * _Open terminal and start MySql Server_
