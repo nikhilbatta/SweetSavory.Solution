@@ -15,11 +15,11 @@ C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcorea
 C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\SweetSavory.TagHelpers.input.cache
 C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\SweetSavory.TagHelpers.output.cache
 C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\SweetSavory.RazorCoreGenerate.cache
-C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\Razor\Views\Index.g.cshtml.cs
-C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\Razor\Views\Login.g.cshtml.cs
-C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\Razor\Views\Register.g.cshtml.cs
 C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\SweetSavory.RazorTargetAssemblyInfo.cs
 C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\bin\Debug\netcoreapp2.2\SweetSavory.Views.dll
 C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\bin\Debug\netcoreapp2.2\SweetSavory.Views.pdb
 C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\SweetSavory.Views.pdb
 C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\SweetSavory.csproj.CopyComplete
+C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\Razor\Views\Account\Index.g.cshtml.cs
+C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\NikhilBatta\Desktop\SweetSavory.Solution\SweetSavory\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs

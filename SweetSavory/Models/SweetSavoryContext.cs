@@ -1,9 +1,9 @@
-using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SweetSavory.Models
 {
-    public class SweetSavoryContext : DbContext
+    public class SweetSavoryContext : IdentityDbContext<StoreManager>
     {
         public DbSet<Flavor> Flavors {get;set;}
         public DbSet<Treat> Treats {get;set;}
