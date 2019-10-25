@@ -5,5 +5,6 @@ namespace SweetSavory.Models
         public int FlavorTreatID {get;set;}
         public Flavor Flavor {get;set;}
         public Treat Treat {get;set;}
+        
     }
 }
