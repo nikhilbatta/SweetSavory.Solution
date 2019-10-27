@@ -1,0 +1,7 @@
+@using SweetSavory.Models
+
+@foreach(Treat treat in @Model)
+{
+    <p>@treat.TreatName </p>
+    @Html.ActionLink("add flavor to treat", "AddFlavor", "Treat")
+}
