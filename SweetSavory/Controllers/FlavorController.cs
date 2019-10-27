@@ -14,9 +14,22 @@ namespace SweetSavory.Controllers
     public class FlavorController : Controller
     {
         private readonly SweetSavoryContext _db;
-        public FlavorController()
+        public FlavorController(SweetSavoryContext db)
         {
-            
+            _db = db;
+        }
+        [Authorize]
+        [HttpGet]
+        public ActionResult AddFlavorType()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddFlavorType(Flavor newFlavorType)
+        {
+            _db.Flavors.Add(newFlavorType);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
