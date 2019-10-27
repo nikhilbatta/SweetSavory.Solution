@@ -5,7 +5,7 @@
     <p>@treat.TreatName </p>
     @foreach(FlavorTreat flavortreat in treat.Flavors)
     {
-        <h2>@flavortreat.Flavor.FlavorID</h2>
+        <h2>@flavortreat.Flavor.FlavorName</h2>
     }
     @Html.ActionLink("add flavor to treat", "AddFlavor", "Treat", new {TreatID = treat.TreatID})
     

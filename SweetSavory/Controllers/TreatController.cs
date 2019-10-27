@@ -24,7 +24,7 @@ namespace SweetSavory.Controllers
         }
         public ActionResult Index()
         {
-            List<Treat> allTreats = _db.Treats.Include(t => t.Flavors).ToList();
+            List<Treat> allTreats = _db.Treats.Include(t => t.Flavors).ThenInclude(f => f.Flavor).ToList();
             return View(allTreats);
         }
         [Authorize]
