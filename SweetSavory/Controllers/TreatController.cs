@@ -88,5 +88,18 @@ namespace SweetSavory.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+         [Authorize]
+        [HttpGet]
+        public ActionResult AddFlavorType()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddFlavorType(Flavor newFlavorType)
+        {
+            _db.Flavors.Add(newFlavorType);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

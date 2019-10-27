@@ -1,0 +1,12 @@
+@model SweetSavory.Models.Flavor
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.FlavorName)
+    @Html.TextBoxFor(model => model.FlavorName)
+
+    
+    
+
+    <input type="submit" value="Add new item" class="btn btn-default" />
+}

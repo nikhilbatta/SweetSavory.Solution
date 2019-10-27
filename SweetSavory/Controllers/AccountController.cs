@@ -63,19 +63,7 @@ namespace SweetSavory.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
         }
-        [Authorize]
-        [HttpGet]
-        public ActionResult AddFlavorType()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult AddFlavorType(Flavor newFlavorType)
-        {
-            _db.Flavors.Add(newFlavorType);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+       
 
     }
 }
