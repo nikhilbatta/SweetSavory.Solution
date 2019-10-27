@@ -3,5 +3,10 @@
 @foreach(Treat treat in @Model)
 {
     <p>@treat.TreatName </p>
-    @Html.ActionLink("add flavor to treat", "AddFlavor", "Treat")
+    @foreach(FlavorTreat flavortreat in treat.Flavors)
+    {
+        <h2>@flavortreat.Flavor.FlavorID</h2>
+    }
+    @Html.ActionLink("add flavor to treat", "AddFlavor", "Treat", new {TreatID = treat.TreatID})
+    
 }

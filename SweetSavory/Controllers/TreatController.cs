@@ -50,18 +50,8 @@ namespace SweetSavory.Controllers
                 var currentUser = await _userManager.FindByIdAsync(userID);
                 newTreat.Treat.CreatedBy = currentUser;
             }
-            
-            // Treat newTreat = new Treat();
-            // newTreat.TreatName = treatName;
             Flavor foundFlavor = _db.Flavors.FirstOrDefault(t => t.FlavorID == FlavorID);
-            
             newTreat.Flavor = foundFlavor;
-            // FlavorTreat newFlavorTreat = new FlavorTreat();
-            
-            // newFlavorTreat.Flavor = foundFlavor;
-            // newFlavorTreat.Treat = newTreat;
-            // newTreat.Flavors.Add(newFlavorTreat);
-            // _db.Treats.Add(newTreat);
             _db.FlavorTreats.Add(newTreat);
             _db.SaveChanges();
             return RedirectToAction("Index");
@@ -74,21 +64,29 @@ namespace SweetSavory.Controllers
             ViewBag.FlavorID = new SelectList(_db.Flavors, "FlavorID", "FlavorName");
             Treat foundTreat = _db.Treats.FirstOrDefault(t => t.TreatID == TreatID);
             return View(foundTreat);
-
         }
-        // [HttpPost]
-        // public async Task<ActionResult> AddFlavor(Treat foundTreat, int flavorID)
-        // {
-        //     var userID = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        //     var currentUser = await _userManager.FindByIdAsync(userID);
-        //      FlavorTreat newFlavorTreat = new FlavorTreat();
-        //     Flavor foundFlavor = _db.Flavors.FirstOrDefault(t => t.FlavorID == FlavorID);
-        //     newFlavorTreat.Flavor = foundFlavor;
-        //     newFlavorTreat.Treat = foundTreat;
-        //     foundTreat.Flavors.Add(newFlavorTreat);
-        //     _db.Entry(foundTreat).State = entityState.Modified;
-        //     _db.SaveChanges();
-        //     return RedirectToAction("Index");
-        // }
+        [HttpPost]
+        public async Task<ActionResult> AddFlavor(int TreatID, int flavorID)
+        {
+            // Treat foundTreat = _db.Treats.FirstOrDefault(t => t.TreatID == TreatID);
+            Flavor foundFlavor = _db.Flavors.FirstOrDefault(t => t.FlavorID == flavorID);
+            Treat foundTreat = _db.Treats.Where(t => t.TreatID == TreatID).FirstOrDefault();
+            FlavorTreat newFlavorTreat = new FlavorTreat();
+            if(foundTreat != null)
+            {
+                newFlavorTreat.Treat = foundTreat;
+            }
+            else
+            {
+            var userID = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userID);
+            }
+            
+            newFlavorTreat.Flavor = foundFlavor;
+            newFlavorTreat.Treat = foundTreat;
+            _db.FlavorTreats.Add(newFlavorTreat);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

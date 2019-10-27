@@ -1,0 +1,15 @@
+@model SweetSavory.Models.Treat;
+
+
+<h1>Add a Treat:</h1>
+
+
+@using (Html.BeginForm())
+{
+    
+    @Html.HiddenFor(model => model.TreatName)
+
+    
+    @Html.DropDownList("FlavorID")
+    <input type="submit" value="Add new item" class="btn btn-default" />
+}
