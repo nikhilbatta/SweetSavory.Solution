@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Susies Salon</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="~/css/styles.css">
+  </head>
+  <body>
+    <ul id="navbarlayout">
+      <li><p class="nav">@Html.ActionLink("Everything", "Index", "Treat")</p></li>
+
+      <li><p class="nav">@Html.ActionLink("Add new Flavor", "AddFlavorType", "Flavor")</p></li>
+    </ul>
+    @RenderBody()
+  </body>
+</html>

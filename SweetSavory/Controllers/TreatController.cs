@@ -72,6 +72,7 @@ namespace SweetSavory.Controllers
             Flavor foundFlavor = _db.Flavors.FirstOrDefault(t => t.FlavorID == flavorID);
             Treat foundTreat = _db.Treats.Where(t => t.TreatID == TreatID).FirstOrDefault();
             FlavorTreat newFlavorTreat = new FlavorTreat();
+            // conditional isnt really needed it should be able to find a treat
             if(foundTreat != null)
             {
                 newFlavorTreat.Treat = foundTreat;

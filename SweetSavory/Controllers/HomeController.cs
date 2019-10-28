@@ -7,7 +7,7 @@ namespace PierresTreats.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Treat");
         }
     }
 }
