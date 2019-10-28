@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using System;
 using System.Security.Claims;
 
 namespace SweetSavory.Controllers
@@ -89,9 +90,11 @@ namespace SweetSavory.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         [HttpGet]
         public ActionResult Edit(int id)
         {
+            Console.WriteLine(id);
             ViewBag.FlavorID = new SelectList(_db.Flavors, "FlavorID", "FlavorName");  
             Treat foundTreat = _db.Treats.FirstOrDefault(t => t.TreatID == id);
             return View(foundTreat);
@@ -103,11 +106,20 @@ namespace SweetSavory.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index", "Treat");
         }
-        [HttpPost]
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             Treat treatToBeDeleted = _db.Treats.FirstOrDefault(t => t.TreatID == id);
+            return View(treatToBeDeleted);
+        }
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id)
+        {
+            Console.WriteLine(id);
+            Treat treatToBeDeleted = _db.Treats.FirstOrDefault(t => t.TreatID == id);
+            FlavorTreat flavorTreatToBeDeleted = _db.FlavorTreats.FirstOrDefault(t => t.Treat.TreatID == id);
             _db.Treats.Remove(treatToBeDeleted);
+            _db.FlavorTreats.Remove(flavorTreatToBeDeleted);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

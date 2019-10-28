@@ -13,8 +13,8 @@
         <h3>@flavortreat.Flavor.FlavorName</h3>
     }
     @Html.ActionLink("add flavor to treat", "AddFlavor", "Treat", new {TreatID = treat.TreatID})
-    @Html.ActionLink("Edit this particular treat", "Edit", "Treat", new {TreatID = treat.TreatID})
-    @Html.ActionLink("Delete this particular treat", "Delete", "Treat", new {TreatID = treat.TreatID})
+    @Html.ActionLink("Edit this particular treat", "Edit", "Treat", new {id = treat.TreatID})
+    @Html.ActionLink("Delete this particular treat", "Delete", "Treat", new {id = treat.TreatID})
     </div>
     
 }

@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-@model SweetSavory.Models.FlavorTreat;
+@model SweetSavory.Models.Treat;
 
 
 <h1>Edit this treat:</h1>
@@ -9,8 +9,9 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Treat.TreatName)
-    @Html.TextBoxFor(model => model.Treat.TreatName)
+    @Html.HiddenFor(model => model.TreatID)
+    @Html.LabelFor(model => model.TreatName)
+    @Html.TextBoxFor(model => model.TreatName)
 
     
     @Html.DropDownList("FlavorID")
@@ -18,5 +19,5 @@
     
     
 
-    <input type="submit" value="Add new item" class="btn btn-default" />
+    <input type="submit" value="Edit this treat" class="btn btn-default" />
 }
