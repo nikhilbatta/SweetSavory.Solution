@@ -29,7 +29,7 @@ namespace SweetSavory.Controllers
         {
             _db.Flavors.Add(newFlavorType);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Treat");
         }
     }
 }

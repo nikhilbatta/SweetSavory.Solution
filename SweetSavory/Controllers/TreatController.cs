@@ -89,6 +89,27 @@ namespace SweetSavory.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-      
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            ViewBag.FlavorID = new SelectList(_db.Flavors, "FlavorID", "FlavorName");  
+            Treat foundTreat = _db.Treats.FirstOrDefault(t => t.TreatID == id);
+            return View(foundTreat);
+        }
+        [HttpPost]
+        public ActionResult Edit(Treat editedTreat)
+        {
+            _db.Entry(editedTreat).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index", "Treat");
+        }
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            Treat treatToBeDeleted = _db.Treats.FirstOrDefault(t => t.TreatID == id);
+            _db.Treats.Remove(treatToBeDeleted);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

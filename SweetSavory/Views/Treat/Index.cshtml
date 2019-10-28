@@ -5,11 +5,16 @@
 
 @foreach(Treat treat in @Model)
 {
-    <p>@treat.TreatName </p>
+  <div class="card">
+    <h1>Treat Type: @treat.TreatName </h1>
     @foreach(FlavorTreat flavortreat in treat.Flavors)
     {
-        <h2>@flavortreat.Flavor.FlavorName</h2>
+      <h2>Flavors for this treat type:</h2>
+        <h3>@flavortreat.Flavor.FlavorName</h3>
     }
     @Html.ActionLink("add flavor to treat", "AddFlavor", "Treat", new {TreatID = treat.TreatID})
+    @Html.ActionLink("Edit this particular treat", "Edit", "Treat", new {TreatID = treat.TreatID})
+    @Html.ActionLink("Delete this particular treat", "Delete", "Treat", new {TreatID = treat.TreatID})
+    </div>
     
 }
