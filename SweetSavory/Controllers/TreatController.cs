@@ -32,6 +32,11 @@ namespace SweetSavory.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            Console.WriteLine(_db.Flavors.Count());
+            if(_db.Flavors.Count() == 0)
+            {
+                return RedirectToAction("AddFlavorType", "Flavor");
+            }
             ViewBag.FlavorID = new SelectList(_db.Flavors, "FlavorID", "FlavorName");
             return View();
 
@@ -40,10 +45,12 @@ namespace SweetSavory.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(FlavorTreat newTreat, int FlavorID)
         {
+    
             Treat foundTreat = _db.Treats.Where(t => t.TreatName == newTreat.Treat.TreatName).FirstOrDefault();
+            Console.WriteLine(foundTreat.TreatName);
             if(foundTreat != null)
             {
-                newTreat.Treat = foundTreat;
+                newTreat.Treat.TreatID = foundTreat.TreatID;
             }
             else
             {

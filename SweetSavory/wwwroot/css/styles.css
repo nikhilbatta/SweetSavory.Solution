@@ -21,3 +21,6 @@ ul#navbarlayout {
     transition: 0.3s;
     border-radius: 5px;
   }
+  h3{
+    text-align: center;
+  }

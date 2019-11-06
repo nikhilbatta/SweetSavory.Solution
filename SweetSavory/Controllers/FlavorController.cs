@@ -22,6 +22,10 @@ namespace SweetSavory.Controllers
         [HttpGet]
         public ActionResult AddFlavorType()
         {
+            if(_db.Flavors.Count() == 0)
+            {
+                ViewBag.Data = "No flavors exist yet, Before you make a treat you need to add some flavors.";
+            }
             return View();
         }
         [HttpPost]
